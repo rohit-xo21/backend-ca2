@@ -32,8 +32,8 @@ app.put('/user', (req,res) => {
 
         if(user){
             let i = users.findIndex(user);
-            users[i] = user;
-            return res.status(200).json({message: "User updated", data: user});
+            users[i] = {email: email, password: password};
+            return res.status(200).json({message: "User updated", data: users});
         }
 
     } catch(err) {
